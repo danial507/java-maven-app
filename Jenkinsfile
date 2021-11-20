@@ -2,29 +2,28 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Build Stage') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
-                }
+                 sh 'echo Build the project'
+                  
+        
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('Building Docker Image') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
-                }
+               
+               sh 'echo creating Docker Image'
             }
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Push Docker Image') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
+               
+                    sh 'echo pushing Docker Image to Docker Hub'
                 }
             }
         }
