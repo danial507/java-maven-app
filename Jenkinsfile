@@ -6,8 +6,6 @@ pipeline {
 
             steps {
                  sh 'echo Build the project'
-                  
-        
             }
         }
 
@@ -25,6 +23,13 @@ pipeline {
                
                     sh 'echo pushing Docker Image to Docker Hub'
                 }
-            }
-        }
+           } 
+     }
+ 
+
+
+
+}
+
+
     
